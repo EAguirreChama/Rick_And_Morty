@@ -1,5 +1,5 @@
 import './App.css';
-import Cards from './components/Cards.jsx';
+import Cards from './components/Cards/Cards';
 import Nav from './components/Nav';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
