@@ -27,9 +27,7 @@
     position: absolute;
     top: 0%;
     left: 0%;
-    /* flex-wrap: nowrap; */
     font-size: 18px;
-    /* line-height: 1px; */
     font-weight: bold;
     margin-top: 45px;
 }
