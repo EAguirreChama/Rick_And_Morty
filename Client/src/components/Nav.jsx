@@ -1,10 +1,11 @@
-import SearchBar from "./SearchBar";
-import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar"
+import { Link } from "react-router-dom"
 
 const Nav = ({ onSearch, logOut}) => {
     return (
         <nav>
             <SearchBar onSearch={onSearch}/>
+            
             <button>
                 <Link to="/about">About</Link>
             </button>
@@ -20,7 +21,6 @@ const Nav = ({ onSearch, logOut}) => {
             <button onClick={logOut}>
                 <Link to="/">Log Out</Link>
             </button>
-
         </nav>
     )
 }
