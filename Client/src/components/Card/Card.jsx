@@ -1,21 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { addFav, removeFav } from "../../Redux/Action";
-import { connect } from "react-redux";
-import { useState, useEffect } from "react";
+import { connect } from "react-redux"
+import { useState, useEffect } from "react"
 import style from "./Card.module.css"
 
 function Card(props) {
-   
-   console.log(props)
-
    const [isFav, setIsFav] = useState(false);
 
    const handleFavorite = () => {
       if(isFav){
          setIsFav(false);
          props.removeFav(props.id)
-      } 
-      else if (!isFav){ 
+      } else if (!isFav){ 
          setIsFav(true);
          props.addFav(props) 
       }
@@ -67,5 +63,3 @@ export default connect (
    mapStateToProps,
    mapDispatchToProps
 )(Card);
-
-
