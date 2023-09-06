@@ -11,9 +11,9 @@ import Favorite from './components/Favorite';
 
 // const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
 // const API_KEY = "37756baaea17.b99eadd4967c86289108";
-
 // const email = "aguirreernesto25@gmail.com"
 // const password = "Ernest201"
+
 const URL = 'http://localhost:3001/rickandmorty/login';
 
 function App() {
