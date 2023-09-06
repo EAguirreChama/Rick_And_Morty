@@ -1,10 +1,9 @@
-import Card from "../components/Card/Card";
-import { connect } from "react-redux";
-import { removeFav, filterCards, orderCards, all } from "../Redux/Action";
 import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { useState } from "react";
+import { removeFav, filterCards, orderCards, all } from "../Redux/Action";
+import Card from "../components/Card/Card";
 import style from "./Favorite.module.css"
-
 
 const Favorites = ({ myFavorites, removeFav }) => {
 
@@ -15,14 +14,14 @@ const Favorites = ({ myFavorites, removeFav }) => {
     const handleOrder = (event) => {
         dispatch(orderCards(event.target.value));
         setAux(!aux)
-    }
+    };
 
     const handleFilter = (event) => {
         if(event.target.value === "All") {
             dispatch(all())
         }
         dispatch(filterCards(event.target.value))
-    }
+    };
 
 
     return (
@@ -38,36 +37,35 @@ const Favorites = ({ myFavorites, removeFav }) => {
                 <option value="Genderless">Genderless</option>
                 <option value="unknown">unknow</option>
             </select>
-        {
-            myFavorites.map((fav) => {
-                return (
-                    <Card 
-                      key={fav.id}
-                      id={fav.id}
-                      name={fav.name}
-                      species={fav.species}
-                      gender={fav.gender}
-                      image={fav.image}
-                      onClose={() => {removeFav(fav.id)}}
-                    />
-                )
-            })
+        { myFavorites.map((fav) => {
+            return (
+                <Card 
+                    key={fav.id}
+                    id={fav.id}
+                    name={fav.name}
+                    species={fav.species}
+                    gender={fav.gender}
+                    image={fav.image}
+                    onClose={() => {removeFav(fav.id)}}
+                />
+            )
+        })
         }
         </div>
     )
-}
+};
 
 const mapStateToProps = (state) => {
     return {
         myFavorites: state.myFavorites
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
         removeFav: (id) => {dispatch(removeFav(id))}
     }
-}
+};
 
 export default connect(
     mapStateToProps,
