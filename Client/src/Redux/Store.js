@@ -1,6 +1,6 @@
-import {createStore, applyMiddleware, compose} from "redux";
+import {createStore, applyMiddleware, compose} from "redux"
 import thunkMiddleware from "redux-thunk"
-import reducer from "./Reducer";
+import reducer from "./Reducer"
 
 // Esta linea sirve para conectar nuestra app con la extension en el navegador (REDUX DEVTOOLS)
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
