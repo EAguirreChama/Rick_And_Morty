@@ -11,47 +11,42 @@ const reducer = (state = initialState, {type, payload}) => {
                 ...state,
                 myFavorites: payload, 
                 allCharacters: payload
-
-            }
-
+            };
         case REMOVE_FAV:
             return {
                 ...state,
                 myFavorites: payload,
                 allCharacters: payload
-            }
-        
+            };
         case FILTER:
             return{
                 ...state,
                 myFavorites: state.allCharacters.filter(fav => fav.gender === payload)
-            }
-
+            };
         case ALL:
             return{
                 ...state,
                 myFavorites: state.allCharacters
-            }
-
+            };
         case ORDER:
             if(payload === "A")
             return{
                 ...state,
                 myFavorites: state.allCharacters.sort((a, d) => a.id - d.id)
-            }
+            };
             if(payload === "D")
             return{
                 ...state,
                 myFavorites: state.allCharacters.sort((a, d) => d.id - a.id)
-            }
+            };
             else return{...state};
 
 
-        default:
-            return{
-                ...state
-            }
-    }
-}
+    default:
+        return{
+            ...state
+        };
+    };
+};
 
 export default reducer;
