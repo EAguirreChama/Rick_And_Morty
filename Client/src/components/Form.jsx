@@ -21,12 +21,12 @@ const Form = ({ login }) => {
             ...userData,
             [event.target.name]: event.target.value
         }))
-    }
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         login(userData);
-    }
+    };
  
     return (
         <form onSubmit={handleSubmit}>
@@ -36,11 +36,10 @@ const Form = ({ login }) => {
             <hr/>
             <label htmlFor="password">Password: </label>
             <input type="text" name="password" value={userData.password} onChange={handleChange}/>
-            {errors.password && <p>{errors.password}</p>}
-
-            <button>Submit</button>
+            {errors.password && <p> {errors.password} </p>}
+            <button> Submit </button>
         </form>
     )
-}
+};
 
 export default Form;
