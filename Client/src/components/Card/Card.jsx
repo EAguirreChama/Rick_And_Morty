@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom";
-import { addFav, removeFav } from "../../Redux/Action";
+import { NavLink } from "react-router-dom"
+import { addFav, removeFav } from "../../Redux/Action"
 import { connect } from "react-redux"
 import { useState, useEffect } from "react"
 import style from "./Card.module.css"
 
 function Card(props) {
-   const [isFav, setIsFav] = useState(false);
+   const [isFav, setIsFav] = useState(false)
 
    const handleFavorite = () => {
       if(isFav){
@@ -23,7 +23,7 @@ function Card(props) {
             setIsFav(true);
          }
       });
-   }, [props.myFavorites, props.id]);
+   }, [props.myFavorites, props.id])
 
    return (
       <div className={style.Card}>
@@ -43,7 +43,7 @@ function Card(props) {
          <img src={props.image} alt='' className={style.image}/>
          </NavLink>
       </div>
-   );
+   )
 }
 
 const mapStateToProps = (state) => {
@@ -62,4 +62,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect (
    mapStateToProps,
    mapDispatchToProps
-)(Card);
+)(Card)
