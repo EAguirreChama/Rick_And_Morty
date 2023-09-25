@@ -1,16 +1,16 @@
-import { useState } from "react";
-import validation from "./Validation";
+import { useState } from "react"
+import validation from "./Validation"
 
 const Form = ({ login }) => {
     const [errors, setErrors] = useState({
         email: "",
         password: ""
-    });
+    })
 
     const [userData, setUserData] = useState({
         email: "",
         password: ""
-    });
+    })
 
     const handleChange = (event) => {
         setUserData({
@@ -21,12 +21,12 @@ const Form = ({ login }) => {
             ...userData,
             [event.target.name]: event.target.value
         }))
-    };
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         login(userData);
-    };
+    }
  
     return (
         <form onSubmit={handleSubmit}>
@@ -40,6 +40,6 @@ const Form = ({ login }) => {
             <button> Submit </button>
         </form>
     )
-};
+}
 
-export default Form;
+export default Form
