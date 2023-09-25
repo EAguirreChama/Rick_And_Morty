@@ -24,4 +24,5 @@ const Nav = ({ onSearch, logOut}) => {
         </nav>
     )
 }
-export default Nav;
+
+export default Nav
