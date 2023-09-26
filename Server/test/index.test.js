@@ -16,29 +16,29 @@ const character = {
 describe ("Test de RUTAS", () => {
     describe("GET /rickandmorty/character/:id", () => {
         it("Responde con status: 200", async () => {
-            const response = await request.get('/rickandmorty/character/1');
+            const response = await request.get('/rickandmorty/character/1')
             expect(response.statusCode).toBe(200)  
-        });
+        })
         it("Responde un objeto con las propiedades: 'id', 'name', 'species', 'gender', 'status', 'origin', 'image'", async () => {
-            const response = await request.get('/rickandmorty/character/1');
+            const response = await request.get('/rickandmorty/character/1')
             for(const prop in character){
                 expect(response.body).toHaveProperty(prop)
             }
-        });
+        })
         it("Si hay un  error responde con status: 500", async () => {
-            const response = await request.get('/rickandmorty/character/3209j');
+            const response = await request.get('/rickandmorty/character/3209j')
             expect(response.statusCode).toBe(500)
-        });
+        })
     })
 
     describe("GET /rickandmorty/login", () => {
         const access = { access: true };
         it("Responde con un objeto con la propiedad access en true si la información del usuario es válidad", async () => {
-            const response = await request.get('/rickandmorty/login?email=aguirreernesto25@gmail.com&password=Ernest201');
+            const response = await request.get('/rickandmorty/login?email=aguirreernesto25@gmail.com&password=Ernest201')
             expect(response.body).toEqual(access);
-        });
+        })
         it("Responde con un objeto con la propiedad access en false si la información del usuario es válidad", async () => {
-            const response = await request.get('/rickandmorty/login?email=aguirreernesto25@gmail.com&password=Ernest102');
+            const response = await request.get('/rickandmorty/login?email=aguirreernesto25@gmail.com&password=Ernest102')
             access.access = false
             expect(response.body).toEqual(access);
         })
