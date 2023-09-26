@@ -1,9 +1,10 @@
-const server = require("../src/app");
-const PORT = 3001;
+const server = require("../src/app")
+const PORT = 3001
 
 server.listen(PORT, () => {
     console.log(`Server raised in Port: ${PORT}`)
 })
+
 // const http = require('http');
 // const { getCharById } = require("./Controllers/getChardByld")
 // // const data = require('./Utils/data')
